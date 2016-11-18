@@ -1,0 +1,219 @@
+.nav-wrapper
+  position: absolute
+  width: 100%
+  top: 50px
+
+  .logo
+    background-image: url(../img/logo.svg)
+    background-repeat: no-repeat
+    width: 150px
+    height: 100px
+    margin: 0 auto
+
+  nav
+    margin: 0 auto
+    width: 703px
+
+    .site-nav
+      color: white
+      background: #292929
+      text-transform: uppercase
+      font-size: 11px
+      line-height: 1.2
+      width: 633px
+
+      ul
+        list-style: none
+        padding: 0
+
+      li
+        display: inline-block
+        margin-right: 5px
+        padding: 20px 10px
+        color: #e2dfdf
+        width: 100px
+        position: relative
+        text-align: center
+        vertical-align: middle
+
+        &:last-child
+          margin-right: 0
+
+        &:hover
+          background: $accent-color
+          cursor: pointer
+
+      ul.drop-menu
+        position: absolute
+        top: 100%
+        left: 0%
+        padding: 0
+
+        li
+          background: $accent-color
+          color: #e2dfdf
+          font-size: 12px
+          text-transform: capitalize
+
+          &:hover
+            background: #46afae
+
+      ul.drop-menu li
+        display: none
+
+      li:hover > ul.drop-menu
+        perspective: 1000px
+
+        li
+          display: block
+          opacity: 0
+
+          @for $i from 1 through 2
+            &:nth-child(#{$i})
+              animation-name: dropmenu
+              animation-duration: 300ms
+              animation-delay: (150ms * $i) - 300ms
+              animation-timing-function: ease-in-out
+              animation-fill-mode: forwards
+
+      @keyframes dropmenu
+        0%
+          opacity: 0
+          transform: rotateY(-90deg) translateY(30px)
+        100%
+          opacity: 1
+          transform: rotateY(0deg) translateY(0px)
+
+    .face-icon
+      background: #393939
+      width: 70px
+      height: 66px
+      float: right
+      position: relative
+      top: -77px
+
+      img
+        width: 50px
+        height: 50px
+        position: relative
+        left: 10px
+        top: 8px
+
+.mobile-nav-toggle
+  display: none
+  position: absolute
+  right: 0
+  align-items: center
+  background: rgba(0, 0, 0, 0.4)
+  width: 45px
+  height: 45px
+  cursor: pointer
+  border-radius: 50%
+  border: 1px solid rgba(255, 255, 255, 0.6)
+  margin-right: 15px
+  z-index: 1
+
+  span,
+  span:before,
+  span:after
+    content: ""
+    display: block
+    height: 1px
+    width: 30px
+    background: white
+    position: relative
+    margin: 0 auto
+    transition: all 0.3s ease-in-out
+
+  span:before
+    top: 9px
+
+  span:after
+    top: -10px
+
+  &.is-open span
+    background: transparent
+
+  &.is-open span:before,
+  &.is-open span:after
+    transform-origin: center
+    transform: rotate(45deg)
+    top: 0
+
+  &.is-open span:before
+    transform: rotate(-45deg)
+
+
+.clearfix
+  overflow-x: hidden
+
+  .mobile-nav-belt
+    position: fixed
+    width: 200%
+
+    .mobile-nav
+      //display: none
+      width: 200px
+      height: 100vh
+      position: absolute
+      right: 0%
+      background: #292929
+      color: white
+      text-transform: uppercase
+      font-size: 12px
+      transition: 1s
+
+      ul
+        list-style: none
+        padding: 120px 0 0 17px
+
+        li
+          margin-bottom: 40px
+          cursor: pointer
+
+          span.nav-arrow
+            background-image: url(../img/nav-arrow.svg)
+            background-repeat: no-repeat
+            width: 11px
+            height: 7px
+            display: inline-block
+            margin-right: 5px
+
+          &:last-child
+            margin-bottom: 0
+
+        ul.drop-menu
+          padding: 0 0 0 15px
+
+          li
+            margin: 10px 0 5px
+            text-transform: capitalize
+
+        ul.drop-menu li
+          display: none
+
+        li:hover > ul.drop-menu
+
+          li
+            display: block
+
+
+@media (max-width: 800px)
+  .nav-wrapper
+    top: 20px
+
+    .mobile-nav-toggle
+      display: flex
+      margin-top: 29px
+
+    .logo
+      margin: 0 0 0 15px
+
+    nav
+      display: none
+
+  .mobile-nav-belt
+    .mobile-nav.is-open
+      display: block
+      right: 50%
+      height: 100vh

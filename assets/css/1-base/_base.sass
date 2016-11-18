@@ -1,0 +1,67 @@
+//	Typography
+p
+  margin: 0 0 20px 0
+  font-family: 'Poiret One', cursive
+
+h1
+  font-family: 'Montserrat Alternates', sans-serif
+
+em
+  font-style: italic
+
+strong
+  font-weight: bold
+
+hr
+  border: solid #ddd
+  border-width: 1px 0 0
+  clear: both
+  margin: 10px 0 30px
+  height: 0
+
+
+
+// Links
+
+a
+  color: #e2dfdf
+  text-decoration: none
+  outline: 0
+
+a:hover
+  color: #e2dfdf
+
+
+
+// Selection colors (easy to forget)
+
+::selection
+  background: $selection-color
+
+::-moz-selection
+  background: $selection-color
+
+img::selection
+  background: transparent
+
+img::-moz-selection
+  background: transparent
+
+body
+  -webkit-tap-highlight-color: $selection-color
+
+
+
+// Basic Styles
+
+body
+  background: $bg-color
+  font-size: 14px
+  line-height: 1.6
+  font-family: 'Open Sans' sans-serif
+  color: $text-color
+  -webkit-font-smoothing: antialiased
+  -webkit-text-size-adjust: 100%
+
+footer
+  background: #e0e0e0

@@ -1,0 +1,126 @@
+.contato-hero-image
+  width: 100%
+  height: 400px
+  background-image: url(../img/contato-hero-image.jpg)
+  background-size: cover
+
+  h1
+    margin: 0
+    padding-top: 300px
+    text-align: center
+    font-size: 50px
+    color: white
+
+.fale-conosco-container
+  max-width: 900px
+  margin: 0 auto
+  display: flex
+
+  .comercial
+    width: 50%
+    padding: 0 10px
+
+    h2
+      color: $accent-color
+      margin: 30px 0 0 0
+      font-family: 'Montserrat Alternates', sans-serif
+      font-size: 25px
+      margin-bottom: 10px
+      padding-top: 25px
+
+    p
+      font-size: 16px
+      line-height: 1.2
+
+    .form-container
+      width: 400px
+      text-align: center
+
+      input
+        width: 100%
+        height: 30px
+        margin-bottom: 10px
+        border: none
+        background: #e7e7ea
+
+      textarea
+        width: 100%
+        border: none
+        background: #e7e7ea
+
+      button
+        background: $accent-color
+        border: none
+        color: white
+        padding: 5px 20px
+
+  .trabalhe-conosco
+    width: 50%
+    padding: 0 10px
+
+    .box-cinza
+      background: #e7e7ea
+      padding: 0 10px
+      margin-bottom: 10px
+
+      h2
+        color: $accent-color
+        margin: 30px 0 0 0
+        font-family: 'Montserrat Alternates', sans-serif
+        font-size: 25px
+        margin-bottom: 10px
+        padding-top: 25px
+
+      p
+        font-size: 16px
+        line-height: 1.2
+        padding-bottom: 25px
+        margin-bottom: 0
+
+    .box-verde
+      background: $accent-color
+      color: white
+      padding: 0 10px
+
+      p
+        margin-bottom: 0
+        padding: 10px 0 5px
+
+.mapa
+  width: 100%
+  height: 250px
+  margin-top: 30px
+  background: grey
+
+@media (max-width: 930px)
+  .contato-hero-image
+    h1
+      padding-top: 170px
+
+  .fale-conosco-container
+    width: 80%
+    flex-wrap: wrap
+
+    .comercial
+      width: 100%
+
+      .form-container
+        width: 100%
+
+        input
+          width: 49%
+
+        textarea
+          width: 99%
+
+    .trabalhe-conosco
+      width: 100%
+
+@media (max-width: 525px)
+  .fale-conosco-container
+    width: 90%
+
+    .comercial
+      .form-container
+        input
+          width: 100%
